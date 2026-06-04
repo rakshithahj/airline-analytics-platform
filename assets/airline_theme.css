@@ -1,1 +1,347 @@
+/* =====================================================
+   GLOBAL STYLES
+===================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+html,
+body,
+[class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+/* =====================================================
+   MAIN APP
+===================================================== */
+
+.stApp {
+    background: linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #111827 50%,
+        #1e293b 100%
+    );
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.sub-title {
+    color: #94a3b8;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* =====================================================
+   KPI CARDS
+===================================================== */
+
+.kpi-card {
+    background: rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.2);
+}
+
+.kpi-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 40px rgba(37,99,235,0.35);
+}
+
+.kpi-value {
+
+    color: white;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+}
+
+.kpi-label {
+
+    color: #cbd5e1;
+
+    font-size: 0.9rem;
+}
+
+/* =====================================================
+   GRADIENT KPI
+===================================================== */
+
+.gradient-card {
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #06b6d4
+    );
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(37,99,235,0.4);
+}
+
+/* =====================================================
+   INSIGHT BOX
+===================================================== */
+
+.insight-box {
+
+    background:
+    rgba(22,33,62,0.7);
+
+    border-left:
+    5px solid #3b82f6;
+
+    border-radius: 12px;
+
+    padding: 16px;
+
+    margin-bottom: 12px;
+
+    color: white;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+section[data-testid="stSidebar"] {
+
+    background:
+    #111827;
+
+    border-right:
+    1px solid rgba(255,255,255,0.08);
+}
+
+section[data-testid="stSidebar"] * {
+
+    color: white !important;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.stButton > button {
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 10px 20px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.stButton > button:hover {
+
+    transform: scale(1.03);
+
+    box-shadow:
+    0 8px 20px rgba(37,99,235,0.4);
+}
+
+/* =====================================================
+   DATAFRAME
+===================================================== */
+
+[data-testid="stDataFrame"] {
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+}
+
+/* =====================================================
+   METRICS
+===================================================== */
+
+[data-testid="metric-container"] {
+
+    background:
+    rgba(255,255,255,0.04);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,0.2);
+}
+
+[data-testid="metric-container"]:hover {
+
+    border:
+    1px solid #3b82f6;
+}
+
+/* =====================================================
+   TABS
+===================================================== */
+
+.stTabs [data-baseweb="tab-list"] {
+
+    gap: 10px;
+}
+
+.stTabs [data-baseweb="tab"] {
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border-radius: 10px;
+
+    padding:
+    10px 20px;
+}
+
+.stTabs [aria-selected="true"] {
+
+    background:
+    #2563eb !important;
+
+    color:
+    white !important;
+}
+
+/* =====================================================
+   EXPANDER
+===================================================== */
+
+.streamlit-expanderHeader {
+
+    background:
+    rgba(255,255,255,0.04);
+
+    border-radius: 10px;
+}
+
+/* =====================================================
+   PLOTLY CHART CONTAINER
+===================================================== */
+
+.plot-container {
+
+    background:
+    rgba(255,255,255,0.03);
+
+    border-radius: 16px;
+
+    padding: 10px;
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+
+    background:
+    #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+    #2563eb;
+
+    border-radius: 10px;
+}
+
+/* =====================================================
+   SUCCESS ALERTS
+===================================================== */
+
+div[data-baseweb="notification"] {
+
+    border-radius: 15px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    margin-top: 50px;
+
+    padding: 20px;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.block-container {
+
+    animation:
+    fadeIn 0.5s ease-in-out;
+}
