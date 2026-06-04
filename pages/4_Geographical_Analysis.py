@@ -10,3 +10,10 @@ fig = px.treemap(
     path=["Continents"],
     values="Passengers"
 )
+top_airports = (
+    df.groupby("Airport Name")
+      .size()
+      .sort_values(ascending=False)
+      .head(20)
+)
+Plotly Horizontal Bar
