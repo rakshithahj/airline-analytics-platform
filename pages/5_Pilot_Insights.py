@@ -13,3 +13,9 @@ fig = px.line(
     x="Month",
     y="Flights"
 )
+delay_rate_by_country
+delay_rate_by_airportAge
+Gender
+Country
+Flight Status
+delay_rate_by_continent
