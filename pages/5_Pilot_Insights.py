@@ -1,21 +1,52 @@
-pilot_stats = (
-    df.groupby("Pilot Name")
-      .agg({
-          "Flight Status":"count"
-      })
+import streamlit as st
+import plotly.express as px
+import pandas as pd
+
+from utils.loader import load_data
+
+df = load_data()
+
+st.title("🧑‍✈️ Pilot Performance")
+
+pilot = (
+    df["Pilot Name"]
+    .value_counts()
+    .head(20)
+    .reset_index()
 )
-Pilot vs Flight Status Heatmap
-df["Departure Date"] = pd.to_datetime(
-    df["Departure Date"]
+
+pilot.columns = [
+    "Pilot",
+    "Flights"
+]
+
+fig = px.bar(
+    pilot,
+    x="Flights",
+    y="Pilot",
+    orientation="h",
+    title="Top Pilots"
 )
-fig = px.line(
-    monthly_data,
-    x="Month",
-    y="Flights"
+
+st.plotly_chart(
+    fig,
+    use_container_width=True
 )
-delay_rate_by_country
-delay_rate_by_airportAge
-Gender
-Country
-Flight Status
-delay_rate_by_continent
+
+heat = pd.crosstab(
+    df["Pilot Name"],
+    df["Flight Status"]
+)
+
+heat = heat.head(20)
+
+fig = px.imshow(
+    heat,
+    text_auto=True,
+    title="Pilot Status Matrix"
+)
+
+st.plotly_chart(
+    fig,
+    use_container_width=True
+)
