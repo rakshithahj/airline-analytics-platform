@@ -13,3 +13,4 @@ def generate_insights(df):
     )
 
     return insights
+st.success(insight)
